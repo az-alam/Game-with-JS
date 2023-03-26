@@ -28,17 +28,23 @@ for (let i = 0; i < images.length; i++) {
 function letsplay() {
     let timer = 0;
     let x = setInterval(() => {
-        if (timer === 30) {
-            alert("Your Score is" +" " + scorespan.innerHTML);
+        if (timer === 10) {
             clearInterval(x)
+            alert("Your Score is" + " " + scorespan.innerHTML);
+            screen4.style.display = "flex"
+
+
         }
         else {
             timerspan.innerHTML = ++timer;
 
-            popphoto();
+            // popphoto();
         }
 
     }, 1000)
+    let y = setInterval(() => {
+        popphoto();
+    }, 500)
 }
 
 function popphoto() {
@@ -53,14 +59,14 @@ function popphoto() {
 }
 
 function getrandomleft() {
-    return Math.random() * window.innerWidth - 50 + "px";
+    return Math.random() * (window.innerWidth - 100) + "px";
 }
 function getrandomtop() {
-    return Math.random() * window.innerHeight - 50 + "px";
+    return Math.random() * (window.innerHeight - 100) + "px";
 }
 
 let score = 0;
 function removeimages(element) {
     element.remove();
-    scorespan.innerHTML=++score;
+    scorespan.innerHTML = ++score;
 }
