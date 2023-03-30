@@ -28,7 +28,7 @@ for (let i = 0; i < images.length; i++) {
 function letsplay() {
     let timer = 0;
     let x = setInterval(() => {
-        if (timer === 10) {
+        if (timer === 30) {
             clearInterval(x)
             alert("Your Score is" + " " + scorespan.innerHTML);
             screen4.style.display = "flex"
